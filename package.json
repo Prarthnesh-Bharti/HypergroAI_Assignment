@@ -4,13 +4,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-<<<<<<< HEAD
-    "start":"node index.js",
-=======
     "start": "node index.js",
->>>>>>> 924caf8 (final commit)
     "dev": "nodemon index.js"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
