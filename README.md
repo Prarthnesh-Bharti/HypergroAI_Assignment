@@ -15,7 +15,7 @@ A **Node.js** backend application for managing real estate listings with advance
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB Atlas  
 - **Authentication:** JWT  
-- **Caching:** Redis  
+- **Caching:** Redis (via Upstash)
 - **CSV Import:** Built-in support  
 - **Deployment:** Render  
 
