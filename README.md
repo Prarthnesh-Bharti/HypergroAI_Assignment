@@ -1,6 +1,6 @@
 # 🏠 Property Listing Backend
 
-A **Node.js** backend application for managing real estate listings with advanced features like user authentication, favorites, property recommendations, and filtering.
+A **Node.js** backend application for managing real estate listings with advanced features like user authentication, favorites and filtering.
 
 ---
 
@@ -27,7 +27,6 @@ A **Node.js** backend application for managing real estate listings with advance
 - 🏘️ Full CRUD operations for property listings (restricted to the creator)
 - 🔍 Advanced filtering on 10+ attributes (e.g., price, location, size)
 - ❤️ Favorite/unfavorite properties
-- 📤 Recommend properties to other users
 - ⚡ Redis caching for improved performance
 
 ---
