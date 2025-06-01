@@ -43,8 +43,6 @@ npm run start
 # Start in development mode
 npm run dev
 
-# Import properties from CSV
-npm run import-csv
 ```
 
 ---
