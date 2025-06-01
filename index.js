@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
 import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
@@ -13,7 +14,7 @@ import authRoutes from './routes/auth.routes.js';
 import propertyRoutes from './routes/property.routes.js';
 import favoriteRoutes from './routes/favorite.routes.js';
 
-dotenv.config();
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -37,13 +38,23 @@ app.use('/api/favorites', favoriteRoutes);
 // Connect DB & Redis, then start server
 (async () => {
   try {
+    /* Mongo */
     await connectDB();
-    await redisClient.connect();
-    console.log('Redis connected');
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-    });
+
+    /* Optional: quick Redis ping so you know it works */
+    try {
+      await redisClient.set('healthcheck', 'ok', { ex: 60 });
+      console.log('Redis (Upstash) connected');
+    } catch (rErr) {
+      console.error('Redis ping failed:', rErr.message);
+      // decide here whether to exit or continue without Redis
+    }
+
+    app.listen(PORT, () =>
+      console.log(`Server running on http://localhost:${PORT}`)
+    );
   } catch (err) {
     console.error('Server startup error:', err.message);
+    process.exit(1);
   }
 })();

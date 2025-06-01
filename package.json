@@ -4,7 +4,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+<<<<<<< HEAD
     "start":"node index.js",
+=======
+    "start": "node index.js",
+>>>>>>> 924caf8 (final commit)
     "dev": "nodemon index.js"
   },
   "keywords": [],
@@ -12,6 +16,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@upstash/redis": "^1.34.9",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
